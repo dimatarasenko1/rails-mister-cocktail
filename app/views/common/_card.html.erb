@@ -1,5 +1,9 @@
 <div class="card-cocktail">
-  <%= image_tag "https://source.unsplash.com/random" %>
+  <% if cocktail.photo.file %>
+    <%= cl_image_tag(cocktail.photo, crop: :scale) %>
+  <% else %>
+    <%= cl_image_tag('No_image_available_ow0nlp', height: 200, crop: :scale) %>
+  <% end %>
   <div class="card-cocktail-infos">
     <div>
       <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>

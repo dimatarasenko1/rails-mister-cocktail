@@ -1,5 +1,5 @@
 class CocktailsController < ApplicationController
-  before_action :load_cocktail, only: [:show, :destroy]
+  before_action :load_cocktail, only: [:show, :destroy, :upload_pic]
 
   def index
     @cocktails = Cocktail.all
@@ -25,6 +25,15 @@ class CocktailsController < ApplicationController
   def destroy
     @cocktail.destroy
     redirect_to cocktails_path
+  end
+
+  def upload_pic
+    @cocktail.update(cocktail_params)
+    if @cocktail.save
+      redirect_to cocktail_path(@cocktail)
+    else
+      render 'new'
+    end
   end
 
   private

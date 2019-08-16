@@ -3,7 +3,7 @@
   <p><strong><%= dose.ingredient.name %></strong></p>
   <div class='d-flex'>
     <p><%= dose.description %></p>
-    <%= link_to cocktail_path(dose.ingredient), class: "ml-2 light-icon"  do %>
+    <%= link_to cocktail_dose_path(dose.cocktail, dose), method: :delete, class: "ml-2 light-icon"  do %>
       <%= icon('fas', 'trash') %>
     <% end %>
   </div>

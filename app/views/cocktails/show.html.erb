@@ -21,7 +21,7 @@
         <% @cocktail.doses.each do |dose| %>
           <%= render 'ingredient_card', dose: dose %>
         <% end %>
-        <%= link_to "Add Ingredient", new_cocktail_path, class: "btn btn-primary btn-block" %>
+        <%= link_to "Add Ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary btn-block" %>
         <%= link_to "Delete Cocktail", cocktail_path(@cocktail), method: :delete, class: "btn btn-danger btn-block" %>
       </div>
     </div>

@@ -1,0 +1,17 @@
+<% if cocktail.photo.file %>
+  <%= image_tag cl_image_path(cocktail.photo,
+        width: 500, height: 400, crop: :fill),  class: "w-100 cocktail-image", alt: "" %>
+<% else %>
+  <%= image_tag cl_image_path('No_image_available_ow0nlp',
+        width: 500, height: 400, crop: :fill),  class: "w-100 cocktail-image", alt: "" %>
+<% end %>
+<div class="text-right bg-light border rounded p-2">
+  <%= icon('fas', 'exchange-alt') %>
+  <h3><%= cocktail.name %></h3>
+  <div>
+    <p><%= cocktail.tagline %></p>
+  </div>
+  <div>
+    <%= '💪' * cocktail.strength %>
+  </div>
+</div>

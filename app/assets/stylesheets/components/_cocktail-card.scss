@@ -1,0 +1,14 @@
+.cocktail-card {
+  i {
+    position: absolute;
+    color: rgba(20, 20, 20, 0.4);
+    top: 30px;
+    right: 30px;
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  i:hover {
+    color: rgba(20, 20, 20, 0.8);
+  }
+}

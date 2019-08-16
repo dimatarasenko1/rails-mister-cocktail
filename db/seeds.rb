@@ -1,7 +1,21 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+puts "Destroying models ..."
+Cocktail.destroy_all
+Dose.destroy_all
+Ingredient.destroy_all
+puts "Destroyed models"
+
+until Cocktail.count == 12
+  c = Cocktail.new(name: Faker::GreekPhilosophers.name,
+                      strength: (0..10).to_a.sample,
+                      tagline: Faker::GreekPhilosophers.quote)
+  3.times do
+    i = Ingredient.create(name: Faker::Artist.name)
+    d = Dose.create(description: "#{(0..500).to_a.sample} ml")
+    d.ingredient = i
+    d.cocktail = c
+    d.save
+  end
+  c.save
+end
+
+p Cocktail.all

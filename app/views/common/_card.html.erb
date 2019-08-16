@@ -1,0 +1,10 @@
+<div class="card-cocktail">
+  <img src="https://source.unsplash.com/random" />
+  <div class="card-cocktail-infos">
+    <div>
+      <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+      <p><%= cocktail.tagline.length > 50 ?  "#{cocktail.tagline.slice(0, 50)} ..." : cocktail.tagline %></p>
+    </div>
+    <h2 class="card-cocktail-pricing"><%= cocktail.strength %></h2>
+  </div>
+</div>

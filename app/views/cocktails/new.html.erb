@@ -1,0 +1,17 @@
+<%= render 'common/navbar' %>
+
+<div class="container mt-3">
+  <%= simple_form_for @cocktail, html: { class: "text-left"} do |f| %>
+    <%= f.error_notification %>
+
+    <%= f.input :name %>
+
+    <%= f.input :strength %>
+
+    <%= f.input :tagline %>
+
+    <%= f.button :submit, class: "btn-primary" %>
+    <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+  <% end %>
+</div>
+

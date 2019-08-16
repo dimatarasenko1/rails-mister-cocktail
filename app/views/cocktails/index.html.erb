@@ -1,0 +1,10 @@
+<%= render 'common/navbar' %>
+<div class="container my-3">
+  <div class="cocktails-wrapper">
+   <% @cocktails.each do |cocktail| %>
+    <%=  render 'common/card', cocktail: cocktail %>
+  <% end %>
+  </div>
+</div>
+
+
